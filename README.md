@@ -1,4 +1,4 @@
-#Puri Game
+# Puri Game
 
 Developed by Alexandra Ibarra C.(@Syrah0)
 
