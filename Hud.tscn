@@ -1,0 +1,195 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckbff4b0043mg"]
+
+[ext_resource type="Script" path="res://Hud.gd" id="1_aabow"]
+[ext_resource type="Theme" uid="uid://butfyecjagsx5" path="res://new_theme.tres" id="1_ppks1"]
+[ext_resource type="Texture2D" uid="uid://dt72fiv7vsp8e" path="res://assets/TinyTails Asset Pack/pngs/ball.png" id="2_x6abv"]
+[ext_resource type="Texture2D" uid="uid://cyvdp5133fsif" path="res://assets/pixel_pack/bomb.png" id="3_wxvi0"]
+[ext_resource type="Texture2D" uid="uid://b0cav1rrivorb" path="res://assets/pixel_pack/medicine.png" id="4_w0p0c"]
+[ext_resource type="Texture2D" uid="uid://dkm4juluknvnm" path="res://assets/pixel_pack/heart.png" id="5_uu243"]
+
+[sub_resource type="Theme" id="Theme_0wq5k"]
+default_font_size = 25
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_aabow")
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+offset_left = 369.0
+offset_top = 55.0
+offset_right = 798.0
+offset_bottom = 201.0
+theme = ExtResource("1_ppks1")
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GameOver"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.86
+anchor_top = -0.387
+anchor_right = -0.86
+anchor_bottom = -0.387
+offset_left = 241.94
+offset_top = 197.502
+offset_right = 670.94
+offset_bottom = 343.502
+theme = ExtResource("1_ppks1")
+text = "Your score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="GameOver"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.86
+anchor_top = -0.387
+anchor_right = -0.86
+anchor_bottom = -0.387
+offset_left = 519.94
+offset_top = 198.502
+offset_right = 948.94
+offset_bottom = 344.502
+theme = ExtResource("1_ppks1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="GameOver"]
+offset_left = 283.0
+offset_top = 345.0
+offset_right = 703.0
+offset_bottom = 476.0
+theme = ExtResource("1_ppks1")
+text = "Back"
+
+[node name="Button2" type="Button" parent="GameOver"]
+offset_left = -223.0
+offset_top = 345.0
+offset_right = 197.0
+offset_bottom = 476.0
+theme = ExtResource("1_ppks1")
+text = "Restart"
+
+[node name="Init" type="Label" parent="."]
+visible = false
+offset_left = 366.0
+offset_top = 10.0
+offset_right = 795.0
+offset_bottom = 156.0
+theme = ExtResource("1_ppks1")
+text = "Puri Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Init"]
+offset_left = 16.0
+offset_top = 484.0
+offset_right = 436.0
+offset_bottom = 615.0
+theme = ExtResource("1_ppks1")
+text = "Start"
+
+[node name="Instruction" type="Label" parent="Init"]
+offset_left = 115.0
+offset_top = 178.0
+offset_right = 547.0
+offset_bottom = 441.0
+theme = SubResource("Theme_0wq5k")
+text = "-1 heart. Reset unsaved score
+
++1 point
+
+Save score
+
++1 heart"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Init/Instruction"]
+offset_left = -64.0
+offset_top = 68.0
+offset_right = -18.0
+offset_bottom = 116.0
+texture = ExtResource("2_x6abv")
+
+[node name="TextureRect2" type="TextureRect" parent="Init/Instruction"]
+offset_left = -55.0
+offset_top = -7.0
+offset_right = -15.0
+offset_bottom = 46.0
+texture = ExtResource("3_wxvi0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Init/Instruction"]
+offset_left = -60.0
+offset_top = 151.0
+offset_right = -20.0
+offset_bottom = 191.0
+texture = ExtResource("4_w0p0c")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Init/Instruction"]
+offset_left = -56.0
+offset_top = 225.0
+offset_right = -16.0
+offset_bottom = 265.0
+texture = ExtResource("5_uu243")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Points" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="total" type="Label" parent="Points"]
+offset_left = 1052.0
+offset_top = 4.0
+offset_right = 1149.0
+offset_bottom = 44.0
+text = "Total score"
+
+[node name="Label2" type="Label" parent="Points/total"]
+offset_left = -4.0
+offset_top = 29.0
+offset_right = 93.0
+offset_bottom = 106.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="total2" type="Label" parent="Points"]
+offset_left = 941.0
+offset_top = 4.0
+offset_right = 1038.0
+offset_bottom = 44.0
+text = "Partial score"
+
+[node name="Label2" type="Label" parent="Points/total2"]
+offset_left = -4.0
+offset_top = 29.0
+offset_right = 93.0
+offset_bottom = 106.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="total3" type="Label" parent="Points"]
+offset_left = 838.0
+offset_top = 4.0
+offset_right = 935.0
+offset_bottom = 42.0
+text = "Hearts"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Points/total3"]
+offset_left = -4.0
+offset_top = 29.0
+offset_right = 93.0
+offset_bottom = 106.0
+text = "5"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="GameOver/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="GameOver/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Init/Button" to="." method="_on_button_pressed"]

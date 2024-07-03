@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dugtv2wnguhow"]
+
+[ext_resource type="PackedScene" uid="uid://b42lk8x8xq0tn" path="res://Player.tscn" id="1_7qrum"]
+[ext_resource type="Script" path="res://Main.gd" id="1_mmiu0"]
+[ext_resource type="PackedScene" uid="uid://du1q53vo3pro3" path="res://Pickable.tscn" id="3_5vnqj"]
+[ext_resource type="PackedScene" uid="uid://ckbff4b0043mg" path="res://Hud.tscn" id="4_xuqek"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mmiu0")
+pickable_scene = ExtResource("3_5vnqj")
+
+[node name="Player" parent="." instance=ExtResource("1_7qrum")]
+visible = false
+position = Vector2(588, 609)
+scale = Vector2(2.5, 2.5)
+
+[node name="PickableTimer" type="Timer" parent="."]
+
+[node name="Pickables" type="Node2D" parent="."]
+
+[node name="Hud" parent="." instance=ExtResource("4_xuqek")]
+
+[connection signal="game_over" from="." to="Hud" method="_on_node_2d_game_over"]
+[connection signal="update_hearts" from="." to="Hud" method="_on_node_2d_update_hearts"]
+[connection signal="update_partial_score" from="." to="Hud" method="_on_node_2d_update_partial_score"]
+[connection signal="update_total_score" from="." to="Hud" method="_on_node_2d_update_total_score"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="timeout" from="PickableTimer" to="." method="_on_pickable_timer_timeout"]
+[connection signal="start_game" from="Hud" to="." method="_on_hud_start_game"]
