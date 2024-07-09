@@ -2,6 +2,7 @@ extends Area2D
 
 var speed = 400
 signal hit
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

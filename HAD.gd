@@ -1,4 +1,5 @@
-extends CanvasLayer
+#extends CanvasLayer
+extends Control
 
 signal start_game
 
@@ -48,16 +49,18 @@ func _on_node_2d_update_total_score(score):
 
 
 func _on_puntajes_go_pressed():
+	print("2puntajes")
 	showLocalLB()
 	return
 
 func _on_puntajes_init_pressed() -> void:
+	print("2puntajes")
 	showLocalLB()
 	return
 
 ## -------------------------------------------------- metodos API -------------------------------------------------- ##
 
-var Global = false
+#var Global = false
 
 func getPD():
 	if Global:
@@ -65,7 +68,9 @@ func getPD():
 
 
 func showLocalLB():
+	print("3puntajes")
 	if(Global):
+		print("4puntajes")
 		return Global.showLeaderBoard()
 	return
 
