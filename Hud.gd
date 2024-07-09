@@ -45,3 +45,27 @@ func _on_node_2d_update_partial_score(score):
 
 func _on_node_2d_update_total_score(score):
 	$Points/total/Label2.text = str(score)
+
+
+func _on_puntajes_go_pressed():
+	showLocalLB()
+	return
+
+func _on_puntajes_init_pressed() -> void:
+	showLocalLB()
+	return
+
+## -------------------------------------------------- metodos API -------------------------------------------------- ##
+
+var Global = false
+
+func getPD():
+	if Global:
+		return Global.get_PlayerData()
+
+
+func showLocalLB():
+	if(Global):
+		return Global.showLeaderBoard()
+	return
+

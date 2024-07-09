@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckbff4b0043mg"]
 
-[ext_resource type="Script" path="res://Hud.gd" id="1_aabow"]
+[ext_resource type="Script" path="res://HUD.gd" id="1_aabow"]
 [ext_resource type="Theme" uid="uid://butfyecjagsx5" path="res://new_theme.tres" id="1_ppks1"]
 [ext_resource type="Texture2D" uid="uid://dt72fiv7vsp8e" path="res://assets/TinyTails Asset Pack/pngs/ball.png" id="2_x6abv"]
 [ext_resource type="Texture2D" uid="uid://cyvdp5133fsif" path="res://assets/pixel_pack/bomb.png" id="3_wxvi0"]
@@ -56,23 +56,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button3" type="Button" parent="GameOver"]
-offset_left = 283.0
+layout_mode = 0
+offset_left = 95.0
 offset_top = 345.0
-offset_right = 703.0
+offset_right = 335.0
 offset_bottom = 476.0
 theme = ExtResource("1_ppks1")
 text = "Back"
 
 [node name="Button2" type="Button" parent="GameOver"]
+layout_mode = 0
 offset_left = -223.0
 offset_top = 345.0
-offset_right = 197.0
+offset_right = 79.0
 offset_bottom = 476.0
 theme = ExtResource("1_ppks1")
 text = "Restart"
 
+[node name="puntajesGO" type="Button" parent="GameOver"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 345.0
+offset_right = 599.0
+offset_bottom = 476.0
+text = "LeaderBoards"
+
 [node name="Init" type="Label" parent="."]
-visible = false
 offset_left = 366.0
 offset_top = 10.0
 offset_right = 795.0
@@ -83,14 +92,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Init"]
-offset_left = 16.0
-offset_top = 484.0
-offset_right = 436.0
-offset_bottom = 615.0
+layout_mode = 0
+offset_left = 18.0
+offset_top = 462.0
+offset_right = 250.0
+offset_bottom = 582.0
 theme = ExtResource("1_ppks1")
 text = "Start"
 
+[node name="puntajesInit" type="Button" parent="Init"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 462.0
+offset_right = 583.0
+offset_bottom = 582.0
+text = "LeaderBoards"
+
 [node name="Instruction" type="Label" parent="Init"]
+layout_mode = 0
 offset_left = 115.0
 offset_top = 178.0
 offset_right = 547.0
@@ -106,6 +125,7 @@ Save score
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Init/Instruction"]
+layout_mode = 0
 offset_left = -64.0
 offset_top = 68.0
 offset_right = -18.0
@@ -113,6 +133,7 @@ offset_bottom = 116.0
 texture = ExtResource("2_x6abv")
 
 [node name="TextureRect2" type="TextureRect" parent="Init/Instruction"]
+layout_mode = 0
 offset_left = -55.0
 offset_top = -7.0
 offset_right = -15.0
@@ -122,6 +143,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="TextureRect3" type="TextureRect" parent="Init/Instruction"]
+layout_mode = 0
 offset_left = -60.0
 offset_top = 151.0
 offset_right = -20.0
@@ -131,6 +153,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="TextureRect4" type="TextureRect" parent="Init/Instruction"]
+layout_mode = 0
 offset_left = -56.0
 offset_top = 225.0
 offset_right = -16.0
@@ -145,6 +168,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="total" type="Label" parent="Points"]
+layout_mode = 0
 offset_left = 1052.0
 offset_top = 4.0
 offset_right = 1149.0
@@ -152,6 +176,7 @@ offset_bottom = 44.0
 text = "Total score"
 
 [node name="Label2" type="Label" parent="Points/total"]
+layout_mode = 0
 offset_left = -4.0
 offset_top = 29.0
 offset_right = 93.0
@@ -160,6 +185,7 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="total2" type="Label" parent="Points"]
+layout_mode = 0
 offset_left = 941.0
 offset_top = 4.0
 offset_right = 1038.0
@@ -167,6 +193,7 @@ offset_bottom = 44.0
 text = "Partial score"
 
 [node name="Label2" type="Label" parent="Points/total2"]
+layout_mode = 0
 offset_left = -4.0
 offset_top = 29.0
 offset_right = 93.0
@@ -175,6 +202,7 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="total3" type="Label" parent="Points"]
+layout_mode = 0
 offset_left = 838.0
 offset_top = 4.0
 offset_right = 935.0
@@ -183,6 +211,7 @@ text = "Hearts"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Points/total3"]
+layout_mode = 0
 offset_left = -4.0
 offset_top = 29.0
 offset_right = 93.0
@@ -192,4 +221,6 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="GameOver/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="GameOver/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="GameOver/puntajesGO" to="." method="_on_puntajes_go_pressed"]
 [connection signal="pressed" from="Init/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Init/puntajesInit" to="." method="_on_puntajes_init_pressed"]

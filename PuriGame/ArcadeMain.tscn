@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dugtv2wnguhow"]
+[gd_scene load_steps=5 format=3 uid="uid://bu0p3rmr561bi"]
 
-[ext_resource type="PackedScene" uid="uid://b42lk8x8xq0tn" path="res://Player.tscn" id="1_7qrum"]
-[ext_resource type="Script" path="res://Main.gd" id="1_mmiu0"]
-[ext_resource type="PackedScene" uid="uid://du1q53vo3pro3" path="res://Pickable.tscn" id="3_5vnqj"]
-[ext_resource type="PackedScene" uid="uid://ckbff4b0043mg" path="res://HUD.tscn" id="4_xuqek"]
+[ext_resource type="Script" path="res://Main.gd" id="1_rrd43"]
+[ext_resource type="PackedScene" uid="uid://du1q53vo3pro3" path="res://Pickable.tscn" id="2_iluy5"]
+[ext_resource type="PackedScene" uid="uid://b42lk8x8xq0tn" path="res://Player.tscn" id="3_k51k2"]
+[ext_resource type="PackedScene" uid="uid://ckbff4b0043mg" path="res://HUD.tscn" id="4_cgwcs"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_mmiu0")
-pickable_scene = ExtResource("3_5vnqj")
+script = ExtResource("1_rrd43")
+pickable_scene = ExtResource("2_iluy5")
 
-[node name="Player" parent="." instance=ExtResource("1_7qrum")]
+[node name="Player" parent="." instance=ExtResource("3_k51k2")]
 visible = false
 position = Vector2(588, 609)
 scale = Vector2(2.5, 2.5)
@@ -18,7 +18,7 @@ scale = Vector2(2.5, 2.5)
 
 [node name="Pickables" type="Node2D" parent="."]
 
-[node name="HUD" parent="." instance=ExtResource("4_xuqek")]
+[node name="HUD" parent="." instance=ExtResource("4_cgwcs")]
 
 [connection signal="game_over" from="." to="HUD" method="_on_node_2d_game_over"]
 [connection signal="update_hearts" from="." to="HUD" method="_on_node_2d_update_hearts"]

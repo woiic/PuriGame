@@ -92,6 +92,7 @@ func _on_game_over():
 	$Player.hide()
 	$PickableTimer.stop()
 	emit_signal("game_over", saved_score + score)
+	GlobalEndGame(saved_score + score)
 	hearts = 5
 	saved_score = 0
 	score = 0
@@ -102,4 +103,16 @@ func _on_hud_start_game():
 	emit_signal("update_hearts", hearts)
 	emit_signal("update_partial_score", score)
 	emit_signal("update_total_score", saved_score)
+
+## -------------------------------------------------- metodos API -------------------------------------------------- ##
+
+#var Global = false
+
+func GlobalCloseGame():
+	if Global:
+		return Global.closeGame()
+
+func GlobalEndGame(score):
+	if Global:
+		return Global.game_over(score)
 
